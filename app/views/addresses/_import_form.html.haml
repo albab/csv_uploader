@@ -1,0 +1,13 @@
+.modal.fade#importModal{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        Import Addresses from File
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span.times{"aria-hidden" => "true"} &times;
+        %h4.modal-title
+      .modal-body
+        = form_tag '/import', multipart: true do
+          %h5.file_label CSV
+          = file_field_tag :file
+          = submit_tag 'Import', class: 'btn btn-success', id: 'submit-addresses'

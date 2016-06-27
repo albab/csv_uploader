@@ -1,0 +1,15 @@
+= render 'import_form'
+.container
+  .col-xs-12
+    .row
+      = render 'alerts'
+      = link_to 'Import Addresses', '#', id: 'import-btn', class: 'btn btn-success pull-right'
+      %h1 Addresses
+      = render 'address_table'
+      = will_paginate @addresses
+
+
+:javascript
+  $('#import-btn').on('click', function() {
+    $('#importModal').modal('show');
+  });

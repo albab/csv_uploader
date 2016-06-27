@@ -1,0 +1,24 @@
+%table.table#address_table
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Address
+      %th City
+      %th State
+      %th Zipcode
+  %tbody
+  - @addresses.each do |address|
+    %tr
+      %td
+        = address.first_name
+      %td
+        = address.last_name
+      %td
+        = address.address
+      %td
+        = address.city
+      %td
+        = address.state
+      %td
+        = address.zip_code
