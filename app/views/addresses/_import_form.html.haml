@@ -11,3 +11,10 @@
           %h5.file_label CSV
           = file_field_tag :file
           = submit_tag 'Import', class: 'btn btn-success', id: 'submit-addresses'
+          #loading Loading...
+
+:javascript
+  $('#submit-addresses').on('click', function() {
+    $('#submit-addresses').hide();
+    $('#loading').fadeIn();
+  });

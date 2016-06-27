@@ -4,7 +4,7 @@ class AddressesController < ApplicationController
     @address = Address.new
   end
 
-  def create
+  def import
     Address.all.destroy_all
     @import = Address.import(params[:file])
     if @import.empty?
